@@ -1,6 +1,7 @@
 # Notes
 **Information Architecture:** The structuring and organization of information in a digital space
 >- Where can I find information fast and easily?
+
 **Information Architecture connects three elements:**
 - The User: 
     - Mental model
@@ -9,4 +10,3 @@
     - Visual Hierarchy- Gestalt principles
 - The Context:
     - SEO:Search Engine Optimization-shown first on search engines
-    
