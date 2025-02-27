@@ -1,7 +1,6 @@
 body {
   font-family: Arial, sans-serif;
   background-color: rgb(152, 246, 152);
-  background-color: lightseagreen;
 }
 
 .container {
@@ -14,7 +13,6 @@ h1 {
   color: black;
   font-size: 24px;
 }
-}
 
 p {
   color: gray;
@@ -22,7 +20,7 @@ p {
 }
 
 .highlight {
-  background yellow;
+  background: yellow;
   padding: 5px;
   border-radius: 3px;
 }
