@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .box{
+                border: 10px solid black;
+                width:auto;
+                transform:translate(10px,100px);
+                transform:scale(0.8);
+            }
+            .contain{
+                object-fit: cover;
+                opacity:50%;
+            }
+            .text{
+                text-align:center;
+                top:50%;
+                width:100%;
+                color:rgb(0, 0, 0);
+                position: absolute;
+            }
+            .box:hover .contain{
+                opacity:100%;
+                transform:rotate(20deg);
+            }
+            .box:hover .text{
+                color:blue;
+                transform:scale(10)
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <img class="contain" src="Gallery/img/color/chinese-food.jpg">
+            <div class="text">
+            Hello
+            </div>
+        </div>
+    </body>
+</html>

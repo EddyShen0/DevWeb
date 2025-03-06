@@ -4,8 +4,8 @@ html{
 
 .container{
     display: flex;
-    margin-left:10%;
-    margin: right 10%;
+    margin:10%;
+    margin-right: 10%;
 }
  .polaroid{
     margin:10px;
@@ -26,4 +26,52 @@ html{
     font-size: large;
     text-align: center;
     color:white
+ }
+
+ .img1{
+    transition:opacity 1s
+ }
+
+ .img1:hover{
+    opacity:0%
+ }
+
+ .img2{
+    transition:transform 2s
+ }
+
+ .img2:hover{
+    transform:rotateZ(2160deg)
+ }
+
+ .img3{
+    transition:transform 2s
+ }
+
+ .img3:hover{
+    transform: translate(100px)
+ }
+ 
+ .img4{
+    transition:transform 1s
+ }
+
+ .img4:hover{
+    transform: skew(70deg)
+ }
+
+ .img5{
+    transition:transform 2s
+ }
+
+ .img5:hover{
+    transform: scale(0.3)
+ }
+
+ .img6{
+    transition: border-radius: 2s
+ }
+
+ .img6:hover{
+    border-radius: 100px;
  }
