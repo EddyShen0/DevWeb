@@ -49,7 +49,6 @@ function startEdit(){
     if (span.id == 'one'|| span.id =='two'|| span.id =='three'|| span.id =='four'){
         inputBox.maxLength = 13;
     }
-    inputBox.id = 'inputBox';
     span.innerHTML = '';
     span.appendChild(inputBox);
     inputBox.focus()
