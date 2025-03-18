@@ -1,0 +1,56 @@
+<!-- This is a file to test ai generated codes out  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Change on Hover</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        
+        .hover-text {
+            font-size: 24px;
+            padding: 20px;
+            color: black;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .hover-text:hover {
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="hover-text" id="changeText">Hover over me!</div>
+
+    <script>
+        // Get reference to the element
+        const textElement = document.getElementById('changeText');
+        
+        // Store the original text
+        const originalText = textElement.textContent;
+        
+        // Text to show when hovering
+        const hoverText = "Text changed!";
+        
+        // Add event listeners for mouseenter and mouseleave
+        textElement.addEventListener('mouseenter', function() {
+            textElement.textContent = hoverText;
+        });
+        
+        textElement.addEventListener('mouseleave', function() {
+            textElement.textContent = originalText;
+        });
+    </script>
+</body>
+</html>
