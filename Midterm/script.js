@@ -49,9 +49,10 @@ function startEdit(){
     if (span.id == 'one'|| span.id =='two'|| span.id =='three'|| span.id =='four'){
         inputBox.maxLength = 13;
     }
+    inputBox.id = 'inputBox';
     span.innerHTML = '';
     span.appendChild(inputBox);
-    inputBox.focus()
+    inputBox.focus();
     
     //adjusting box length
     inputBox.style.width = (inputBox.value.length) + 'ch';
@@ -70,20 +71,35 @@ function startEdit(){
         }
 
         if(span.id == 'one'){
-            if(inputBox.value == "green"){
-                document.getElementById('block1').style.backgroundColor = "green"
-                document.getElementById('block2').style.backgroundColor = "green"
-                document.getElementById('block3').style.backgroundColor = "green"
-            }
             if(inputBox.value == "red"){
                 document.getElementById('block1').style.backgroundColor = "red"
                 document.getElementById('block2').style.backgroundColor = "red"
                 document.getElementById('block3').style.backgroundColor = "red"
             }
+            if(inputBox.value == "orange"){
+                document.getElementById('block1').style.backgroundColor = "orange"
+                document.getElementById('block2').style.backgroundColor = "orange"
+                document.getElementById('block3').style.backgroundColor = "orange"
+            }
+            if(inputBox.value == "yellow"){
+                document.getElementById('block1').style.backgroundColor = "yellow"
+                document.getElementById('block2').style.backgroundColor = "yellow"
+                document.getElementById('block3').style.backgroundColor = "yellow"
+            }
+            if(inputBox.value == "green"){
+                document.getElementById('block1').style.backgroundColor = "green"
+                document.getElementById('block2').style.backgroundColor = "green"
+                document.getElementById('block3').style.backgroundColor = "green"
+            }
             if(inputBox.value == "blue"){
                 document.getElementById('block1').style.backgroundColor = "blue"
                 document.getElementById('block2').style.backgroundColor = "blue"
                 document.getElementById('block3').style.backgroundColor = "blue"
+            }
+            if(inputBox.value == "purple"){
+                document.getElementById('block1').style.backgroundColor = "purple"
+                document.getElementById('block2').style.backgroundColor = "purple"
+                document.getElementById('block3').style.backgroundColor = "purple"
             }
         }
 
@@ -187,4 +203,22 @@ function startEdit(){
             console.log("GENIUS")
         }
     })
+}
+
+let coverStats = 1
+
+addEventListener('mouseup',function(){
+    if(coverStats == 1){
+        startComposition()
+    }
+})
+
+function startComposition(){
+    document.getElementById('cover').style.opacity = 0
+    document.getElementById('introduction').style.opacity = 0
+    setTimeout(function(){
+        document.getElementById('cover').style.width = 0;
+        document.getElementById('cover').style.height = 0
+    },5000)
+
 }

@@ -2,6 +2,40 @@
     transition: font-size 2s, color 2s
 }
 
+.cover{
+    background-color:white;
+    width:100vw;
+    height:100vh;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 2s 3s
+}
+
+.introduction{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 21px;
+    color:rgb(71, 71, 71);
+    text-align: center;
+    width: 690px;
+    margin: 70px;
+    transition: opacity 2s
+}
+
+.continue{
+    font-size: 25px;
+     color: rgb(174, 174, 174);
+     animation: animate 2s infinite alternate;
+}
+@keyframes animate {
+    0% {opacity: 0%;}
+    100% {opacity:100%}
+    
+}
+
 .input{
     outline: none; 
     border: none;
@@ -137,7 +171,7 @@
     }
     .composition{
         bottom: -60px;
-        left: -30px;
+        left: -300px;
     }
 }
 .editSpans{
