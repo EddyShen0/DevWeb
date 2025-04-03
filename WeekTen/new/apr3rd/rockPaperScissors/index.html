@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+       
+        <div class="container">
+        <p style="font-size: 30px;">Rock Paper Scissors Game</p>
+        <br>
+        <div class="choices">
+            <button class="buttons" onclick="start(0)">ROCK</button>
+            <button class="buttons" onclick="start(1)">PAPER</button>
+            <button class="buttons" onclick="start(2)">SCISSORS</button>
+        </div>
+        <p>COMPUTER's CHOICE: <span id="computer"></span></p>
+        <p>You <span id="result">...</span></p>
+        <div>Wins:<span id="wins"> </span> Losts:<span id="losts"></span></div>
+        <button class="buttons" id="restart" style ="margin-top:20px; opacity:0%" onclick="newGame()">NEW GAME</button>
+        
+        </div>
+
+    <script src="/WeekTen/new/apr3rd/rockPaperScissors/script.js"></script>
+    </body>
+</html>
