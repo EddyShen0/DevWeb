@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Ghibli Film</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #fefae0;
+        text-align: center;
+        padding: 2rem;
+      }
+      #card {
+        background: white;
+        border-radius: 1rem;
+        padding: 2rem;
+        max-width: 600px;
+        margin: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      img {
+        max-width: 100%;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="card">
+      <h1 id="title">Loading...</h1>
+      <img id="image" src="" alt="Film poster" style="display: none" />
+      <p id="description"></p>
+    </div>
+    <button id = "change" onclick="loadRandomFilm()">Next Film</button>
+    <button id = "filter" onclick="filter()">Show only films produced before 2000</button>
+    <script>
+      let num = 1
+      let filterBut = document.getElementById("filter")
+
+      async function loadRandomFilm(){
+        const res = await fetch("https://ghibliapi.vercel.app/films");
+        const films = await res.json();
+
+        const randomFilm = films[Math.floor(Math.random()*films.length)]
+        if(num === -1){
+        if(Number(randomFilm.release_date) < 2000 ){
+          console.log(randomFilm.release_date)
+        document.getElementById("title").textContent = randomFilm.title;
+        document.getElementById("description").textContent = randomFilm.description;
+
+        if(randomFilm.image){
+          const img = document.getElementById("image");
+          img.src = randomFilm.image;
+          img.style.display = "block";
+        }
+        else{
+          document.getElementById("image").style.display = "none";
+        }
+        } else {
+          loadRandomFilm()
+        }
+      } else {
+        console.log(randomFilm.release_date)
+        document.getElementById("title").textContent = randomFilm.title;
+        document.getElementById("description").textContent = randomFilm.description;
+
+        if(randomFilm.image){
+          const img = document.getElementById("image");
+          img.src = randomFilm.image;
+          img.style.display = "block";
+        }
+        else{
+          document.getElementById("image").style.display = "none";
+        }
+      }
+      }
+
+      loadRandomFilm();
+
+      function filter(){
+        num = -num;
+        console.log(num)
+        if(num === -1){
+          filterBut.textContent = "Disable Filter"
+        }
+        if(num === 1){
+          filterBut.textContent = "Show only films produced before 2000"
+        }
+        
+      }
+    </script>
+  </body>
+</html>
