@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html>
     <body>
-
+        <div id="main">
+            <p id="title">Recording title: </p>
+            <p id="release_date">Release date: </p>
+        </div>
     </body>
     <script>
-        var client_id = 'b89671b439f74a17882074a3f4f56fc7';
-var redirect_uri = 'http://127.0.0.1:3000';
+        let title = document.getElementById("title")
+        let releaseDate = document.getElementById("release_date")
+    async function loadModule(){
+        const res = await fetch("https://musicbrainz.org/ws/2/recording/87bfb23d-939f-4726-bd45-ce180a9809db?fmt=json")
+        const recording = await res.json()
+        title.textContent += recording.title
+        releaseDate.textContent += recording["first-release-date"]
 
-var app = express();
-
-app.get('/login', function(req, res) {
-
-  var state = generateRandomString(16);
-  var scope = 'user-read-private user-read-email';
-
-  res.redirect('https://accounts.spotify.com/authorize?' +
-    querystring.stringify({
-      response_type: 'code',
-      client_id: client_id,
-      scope: scope,
-      redirect_uri: redirect_uri,
-      state: state
-    }));
-});
-        // const res = await fetch("https://musicbrainz.org/ws/2/recording/87bfb23d-939f-4726-bd45-ce180a9809db")
+    }
+    loadModule()
     </script>
 </html>
