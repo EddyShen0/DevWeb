@@ -47,13 +47,15 @@ function pullCards(){
 pullCards()
 
 
-    
+//This function took reference from https://stackoverflow.com/questions/78391185/how-do-i-avoid-sdk-and-use-raw-fetch-with-groq-api
+//Thanks to GroqCloud for providing free chat bot api
     async function callGroq() {
-
         const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    //Got warned by github for exposed key, but since short-term and free use I think its fine
+                    //to expose it. I have no idea how to hide it anywys
                     Authorization: `Bearer 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`
                 },
                 body: JSON.stringify({
@@ -84,6 +86,8 @@ pullCards()
                 const data = await response.json();
                 let dataContent = data.choices[0].message?.content
                 console.log(dataContent);
+    //Adjustment code to fix the ending of the JSON output of AI
+    //Some how the outputs often lack either "] or "}]" at the end
                 if(!dataContent.endsWith("]")){
                     if(!dataContent.endsWith("}")){
                         dataContent += "}]"
