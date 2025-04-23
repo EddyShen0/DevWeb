@@ -8,6 +8,9 @@ I tried to search if there is already this kind of website and it turned out the
 
 Card game Balatro could also be a good reference with its animation and process of cards.
 
+I wonder if its okay for me to do another tarot card website
+since there is already one.
+
 ## Skills to use
 - animation
 - API fetch
