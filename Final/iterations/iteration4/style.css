@@ -1,0 +1,92 @@
+.canvas{
+    background-color: rgba(25, 0, 248, 0);
+    position:absolute;
+}
+
+.input{
+    width:500px;
+    text-align: center;
+    margin:20px;
+    font-size: 15px;
+}
+
+.start{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eff{
+    position:absolute;
+    transform: translate(0px, -2px);
+    z-index: 30;
+}
+
+.card{
+    position:absolute;
+    overflow: hidden;
+    translate:0px 80px;
+    width: 100px;
+    height:145px;
+    background-color: rgb(76, 88, 255);
+    border-radius: 7px;
+
+    z-index:5;
+}
+.cardReverse{
+    position:absolute;
+    width: 100px;
+    height:145px;
+    background-color: rgb(76, 88, 255);
+    border-radius: 7px;
+    animation: cardTranslation 3s  infinite;
+    z-index: 2;
+
+}
+
+@keyframes cardAnimation {
+    0% {rotate: -2deg}
+    50% {rotate: 2deg}
+    100% {rotate: -2deg}
+}
+
+
+
+.coverColor{
+    position: absolute;
+    translate: -10px -3px;
+    background-color: aquamarine;
+    width:160px;
+    height:149px;
+    animation: coverAnimation 8s linear infinite;
+    z-index: 0;
+}
+/* @keyframes coverAnimation{
+    0% {height: 0%}
+    20%{height:120%}
+} */
+
+@keyframes cardTranslation{
+    0% {translate: 0px 0px}
+    100% {translate: 100px 240px}
+}
+
+body{
+    margin:0px;
+}
+
+
+#canvas { image-rendering: pixelated; }
+
+#ctx{
+    animation: cardAnimation 3s infinite
+}
+
+.cardMac{
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+        animation: cardAnimation 7s ease-in-out infinite;
+}

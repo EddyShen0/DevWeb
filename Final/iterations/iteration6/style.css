@@ -1,0 +1,121 @@
+.canvas{
+    background-color: rgba(25, 0, 248, 0);
+    position:absolute;
+}
+
+.input{
+    width:500px;
+    text-align: center;
+    margin:20px;
+    font-size: 15px;
+}
+
+.start{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eff{
+    position:absolute;
+    transform: translate(0px, -2px);
+    z-index: 30;
+}
+
+.question{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(0px, 160px);
+    z-index: 0;
+    transition: transform 1s ease-in;
+}
+
+.card{
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1.5s, rotate 2.5s, scale 1.3s;
+    rotate: 0deg;
+    
+    /* transform: rotate(50deg) */
+}
+.cardShow{
+    transition: transform 1.5s, scale 1.3s;
+    transform: translate(0px,150px);
+    z-index: 50
+}
+
+.cardUpright{
+    display: flex;
+    position:absolute;
+    overflow: hidden;
+    translate:0px 80px;
+    width: 100px;
+    height:145px;
+    background-color: rgb(76, 88, 255);
+    justify-content: center;
+    z-index:5;
+    transition: width 2s, rotate 2s;
+}
+
+.cardReverse{
+    position: absolute;
+    background-color: aquamarine;
+    width:100px;
+    height:145px;
+    z-index: 7;
+}
+
+.cardBack{
+    position: absolute;
+    width: 110px;
+    height: 145px;
+    z-index:10;
+    background-color: rgb(137, 43, 226);
+}
+
+.cardTranslate{
+    position:absolute;
+    width: 100px;
+    height:145px;
+    background-color: rgb(76, 88, 255);
+    border-radius: 7px;
+    animation: cardTranslation 3s infinite;
+    z-index: 2;
+}
+
+@keyframes cardAnimation {
+    0% {rotate: -2deg}
+    50% {rotate: 2deg}
+    100% {rotate: -2deg}
+}
+
+@keyframes cardTranslation{
+    0% {translate: 0px 0px}
+    100% {translate: 100px 240px}
+}
+
+@keyframes cardFlip{
+    0% {width: 100px}
+    50% {width: 0px}
+    100% {width: 100px}
+}
+
+@keyframes reRotate{
+    0% {rotate: 0deg}
+    100% {rotate: 0deg}
+}
+
+body{
+    margin:0px;
+}
+
+
+#canvas { image-rendering: pixelated; }
+
+#ctx{
+    animation: cardAnimation 3s infinite
+}

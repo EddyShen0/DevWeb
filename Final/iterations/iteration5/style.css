@@ -1,0 +1,89 @@
+.canvas{
+    background-color: rgba(25, 0, 248, 0);
+    position:absolute;
+}
+
+.input{
+    width:500px;
+    text-align: center;
+    margin:20px;
+    font-size: 15px;
+}
+
+.start{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eff{
+    position:absolute;
+    transform: translate(0px, -2px);
+    z-index: 30;
+}
+
+.card{
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1.5s, rotate 2.5s, scale 1.3s;
+    rotate: 0deg;
+    
+    /* transform: rotate(50deg) */
+}
+
+.cardUpright{
+    display: flex;
+    position:absolute;
+    overflow: hidden;
+    translate:0px 80px;
+    width: 100px;
+    height:145px;
+    background-color: rgb(76, 88, 255);
+    justify-content: center;
+    z-index:5;
+}
+
+.cardReverse{
+    position: absolute;
+    background-color: aquamarine;
+    width:120px;
+    height:145px;
+    translate: 0px -1px;
+    padding:1px;
+    z-index: 0;
+}
+
+.cardTranslate{
+    position:absolute;
+    width: 100px;
+    height:145px;
+    background-color: rgb(76, 88, 255);
+    border-radius: 7px;
+    animation: cardTranslation 3s infinite;
+    z-index: 2;
+}
+
+@keyframes cardAnimation {
+    0% {rotate: -2deg}
+    50% {rotate: 2deg}
+    100% {rotate: -2deg}
+}
+
+@keyframes cardTranslation{
+    0% {translate: 0px 0px}
+    100% {translate: 100px 240px}
+}
+
+body{
+    margin:0px;
+}
+
+
+#canvas { image-rendering: pixelated; }
+
+#ctx{
+    animation: cardAnimation 3s infinite
+}

@@ -19,4 +19,4 @@ since there is already one.
 - text to speech
 
 ## Wireframe
-![Alt text](image/wireframe.JPG)
+![Alt text](wireframe.JPG)
